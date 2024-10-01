@@ -12,6 +12,8 @@ networks:
   default:
     name: opentelemetry-demo
     driver: bridge
+  oteldemo:
+    external: true
 
 services:
   # ******************
@@ -712,6 +714,9 @@ services:
       - OTEL_COLLECTOR_HOST
       - OTEL_COLLECTOR_PORT_GRPC
       - OTEL_COLLECTOR_PORT_HTTP
+    networks:
+      - oteldemo
+      - default
 
   # Prometheus
   prometheus:

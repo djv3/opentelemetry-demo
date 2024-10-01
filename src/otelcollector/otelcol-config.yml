@@ -19,7 +19,7 @@ receivers:
 exporters:
   debug:
   otlp:
-    endpoint: "ingester:5000"
+    endpoint: "ingester:5200"
     tls:
       insecure: true
 
